@@ -1,5 +1,12 @@
 '''Tkinter Python GUI'''
 
+import matplotlib
+matplotlib.use("TkAgg")
+''' the backend of matplotlib '''
+
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib.figure import Figure
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -95,12 +102,29 @@ class PageTwo(tk.Frame):
 		tk.Frame.__init__(self, parent)
 		label = tk.Label(self, text = "Page Two", font = LARGE_FONT)
 		label.pack(padx=10, pady=10)
+		
+		f = Figure(figsize =(5, 5), dpi = 100)
+		a = f.add_subplot(111)
+		a.plot([1, 2, 3, 4, 5, 6], [6, 7, 8, 9, 2, 4])
+		canvas = FigureCanvasTkAgg(f, self)
+		canvas.show()
+		canvas.get_tk_widget().pack(side = tk.TOP, fill=tk.BOTH, expand = True)
+		''' show the plot '''
+
+
 		button1 = tk.Button(self,text='Go to Page 1', 
 			command = lambda: controller.show_frame(PageOne))
 		button1.pack()
 		button2 = tk.Button(self,text='Back to Home', 
 			command = lambda: controller.show_frame(StartPage))
 		button2.pack()
+
+
+
+		# toolbar = NavigationToolbar2TkAgg(canvas, self)
+		# toolbar.update()
+		# canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+		''' add the navigation bar '''
 
 
 app = AccidentTrackerApp()

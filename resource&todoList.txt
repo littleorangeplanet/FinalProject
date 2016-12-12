@@ -1,0 +1,60 @@
+NYPD Motor Vehicle Collisions
+https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95
+
+demographic info
+http://www.city-data.com/zipmaps/New-York-New-York.html
+
+census data
+https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?src=bkmk
+
+
+weather report:
+
+https://www.ncdc.noaa.gov/IPS/lcd/lcd.html
+
+Heatmap;
+https://data.cityofnewyork.us/Public-Safety/Heat-map/9dh2-x3up
+
+案例：
+https://data.cityofnewyork.us/NYC-BigApps/NYPD-Motor-Vehicle-Collisions/m666-sf2m
+
+
+Graphs:
+
+
+1. 每个borough在时间轴上的纵向比较
+（1）overview：
+input：数据类型（总事故量，passenger／passerby 死亡／受伤）
+output：group by borough，横轴年份，纵轴count，折线图，现实每个borough的变化情况
+(2) input:年份， borough，数据类型（总事故量，passenger／passerby 死亡／受伤）
+    output:折线图，选择数据类型在选择的年份中的变化情况
+
+2.高危区域统计
+input：数据类型（总事故量，passenger／passerby 死亡／受伤）
+output：数字最高的10个zipcode
+
+3.发生场所分析
+input：年份（可选多年）、borough（每个／全市）
+output：on street/ cross street / off street count柱状图
+
+4.事故原因统计
+input：年份（可选多年）
+output：所有事故原因count的柱状图，从高到低排序
+
+5. vehicle type统计
+input： 年份（可选多年）
+output：所有事故车辆类型count的柱状图，从高到低排序
+
+6. 尝试：高事故率的车种在一年中事故发生数量的变化
+input：车种，年份
+output：事故count变化折线图
+
+7.尝试：cross／on／off street 三个事故场所一年事故发生数量的变化
+input：场所，年份
+output：事故count变化折线图
+
+8.other factors:
+（1）找到population 或econ指数 by zipcode／borough的数据，比较与事故数量的关系
+（2）找到全市按每年每月的平均气温／平均降水量，比较与事故数量的关系
+
+9.输入年份，产生heatmap

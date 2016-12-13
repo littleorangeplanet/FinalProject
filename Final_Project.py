@@ -19,5 +19,6 @@ a = AccidentAnalysis(df_1)
 # print(month_06)
 
 
-a.borough_year_count(borough = 'queens')
+a.borough_year_count(borough = 'QUEENS')
+plt.show()
 
